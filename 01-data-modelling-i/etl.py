@@ -66,6 +66,21 @@ def process(cur, conn, filepath):
                 # print(insert_statement)
                 cur.execute(insert_statement)
 
+
+                # Insert data into tables here
+                insert_statement = f"""
+                    INSERT INTO repos (
+                        id,
+                        name,
+                        url
+                    ) VALUES ({each["repo"]["id"]}, '{each["actor"]["login"]}')
+                    ON CONFLICT (id) DO NOTHING
+                """
+
+
+                # print(insert_statement)
+                cur.execute(insert_statement)
+
                 # Insert data into tables here
                 insert_statement = f"""
                     INSERT INTO events (
