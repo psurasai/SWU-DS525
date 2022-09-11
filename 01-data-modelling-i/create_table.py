@@ -9,61 +9,72 @@ PostgresConn = NewType("PostgresConn", psycopg2.extensions.connection)
 table_drop_events = "DROP TABLE IF EXISTS events"
 table_drop_actors = "DROP TABLE IF EXISTS actors"
 table_drop_repos = "DROP TABLE IF EXISTS repos"
-table_drop_orgs = "DROP TABLE IF EXISTS orgs"
+table_drop_org = "DROP TABLE IF EXISTS orgs"
 
-
+#Create actors table with 6 columns and id as primary key
 table_create_actors = """
     CREATE TABLE IF NOT EXISTS actors (
-        id int,
+        id bigint NOT NULL,
         login text,
+        display_login text,
+        gravatar_id text,
+        url text,
+        avatar_url text,
         PRIMARY KEY(id)
     )
 """
 
+#Create repos table with 4 columns and id as primary key
 table_create_repos = """
     CREATE TABLE IF NOT EXISTS repos (
-        id int,
+        id bigint NOT NULL,
         name text,
         url VARCHAR,
         PRIMARY KEY(id)
     )
 """
-table_create_orgs = """
-    CREATE TABLE IF NOT EXISTS orgs (
-        id int,
+
+#Create repos table with 6 columns and id as primary key
+table_create_org = """
+    CREATE TABLE IF NOT EXISTS org (
+        id bigint NOT NULL,
         login text,
-        gravatar_id int,
-        url VARCHAR,
-        vatar_url VARCHAR,
+        gravatar_id text,
+        url text,
+        avatar_url text,
         PRIMARY KEY(id)
     )
 """
 
+#Create repos table with 7 columns and id as primary key
+#Constraint actor_id, repo_id, org_id as foreign key of actor, repo and org tables, respectively
 table_create_events = """
     CREATE TABLE IF NOT EXISTS events (
-        id text,
+        id bigint NOT NULL,
         type text,
         actor_id int,
         repos_id int,
-        orgs_id int,
+        public text,
+        created_at text,
+        org_id int,
         PRIMARY KEY(id),
         CONSTRAINT fk_actor FOREIGN KEY(actor_id) REFERENCES actors(id),
         CONSTRAINT fk_repos FOREIGN KEY(repos_id) REFERENCES repos(id),
-        CONSTRAINT fk_orgs FOREIGN KEY(orgs_id) REFERENCES orgs(id)
+        CONSTRAINT fk_orgs FOREIGN KEY(org_id) REFERENCES org(id)
     )
 """
 
 create_table_queries = [
     table_create_actors,
-    table_create_orgs,
+    table_create_org,
     table_create_repos,
     table_create_events
 ]
 drop_table_queries = [
     table_drop_events,
     table_drop_actors,
-    table_drop_repos,
-    table_drop_orgs
+    table_drop_org,
+    table_drop_repos
 ]
 
 
