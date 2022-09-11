@@ -32,6 +32,8 @@ def process(cur, conn, filepath):
             data = json.loads(f.read())
             for each in data:
                 # Print some sample data
+                #print(each["id"], each["type"], each["actor"]["login"])
+
                 
                 if each["type"] == "IssueCommentEvent":
                     print(
@@ -55,45 +57,91 @@ def process(cur, conn, filepath):
                         each["created_at"],
                     )
 
-                # Insert data into tables here
-                insert_statement = f"""
+                # Insert data into actors tables
+                insert_actors_statement = f"""
                     INSERT INTO actors (
                         id,
-                        login
-                    ) VALUES ({each["actor"]["id"]}, '{each["actor"]["login"]}')
+                        login,
+                        display_login,
+                        gravatar_id,
+                        url,
+                        avatar_url
+                    ) VALUES ({each["actor"]["id"]}, '{each["actor"]["login"]}',
+                    '{each["actor"]["display_login"]}','{each["actor"]["gravatar_id"]}',
+                    '{each["actor"]["url"]}','{each["actor"]["avatar_url"]}')
                     ON CONFLICT (id) DO NOTHING
                 """
                 # print(insert_statement)
-                cur.execute(insert_statement)
+                cur.execute(insert_actors_statement)
 
 
-                # Insert data into tables here
-                insert_statement = f"""
+                # Insert data into repos table here
+                insert_repos_statement = f"""
                     INSERT INTO repos (
                         id,
                         name,
                         url
-                    ) VALUES ({each["repo"]["id"]}, '{each["actor"]["login"]}')
-                    ON CONFLICT (id) DO NOTHING
-                """
-
-
-                # print(insert_statement)
-                cur.execute(insert_statement)
-
-                # Insert data into tables here
-                insert_statement = f"""
-                    INSERT INTO events (
-                        id,
-                        type,
-                        actor_id
-                    ) VALUES ('{each["id"]}', '{each["type"]}', '{each["actor"]["id"]}')
+                    ) VALUES ({each["repo"]["id"]}, '{each["repo"]["name"]}',
+                    '{each["repo"]["url"]}')
                     ON CONFLICT (id) DO NOTHING
                 """
                 # print(insert_statement)
-                cur.execute(insert_statement)
+                cur.execute(insert_repos_statement)
+
+                # Try insert data into org and events tables here
+                try:
+                    insert_org_statement = f"""
+                        INSERT INTO org (
+                            id,
+                            login,
+                            gravatar_id,
+                            url,
+                            avatar_url)
+                        VALUES ({each["org"]["id"]}, '{each["org"]["login"]}',
+                        '{each["org"]["gravatar_id"]}',
+                        '{each["org"]["url"]}','{each["org"]["avatar_url"]}')
+                        ON CONFLICT (id) DO NOTHING
+                    """
+
+                    # print(insert_statement)
+                    cur.execute(insert_org_statement)
+
+                # Insert data into events table here
+                    insert_statement = f"""
+                        INSERT INTO events (
+                            id,
+                            type,
+                            actor_id,
+                            repos_id,
+                            public,
+                            created_at,
+                            org_id
+                        ) VALUES ('{each["id"]}', '{each["type"]}', '{each["actor"]["id"]}',
+                        '{each["repo"]["id"]}','{each["public"]}','{each["created_at"]}','{each["org"]["id"]}')
+                        ON CONFLICT (id) DO NOTHING
+                    """
+                # print(insert_statement)
+                    cur.execute(insert_statement)
+
+                # Insert data which does not have org data into event table here
+                except:
+                    insert_statement = f"""
+                        INSERT INTO events (
+                            id,
+                            type,
+                            actor_id,
+                            repo_id,
+                            public,
+                            created_at
+                        ) VALUES ('{each["id"]}', '{each["type"]}', '{each["actor"]["id"]}',
+                        '{each["repos"]["id"]}','{each["public"]}','{each["created_at"]}')
+                        ON CONFLICT (id) DO NOTHING
+                    """
+                # print(insert_statement)
+                    cur.execute(insert_statement)
 
                 conn.commit()
+
 
 
 def main():
