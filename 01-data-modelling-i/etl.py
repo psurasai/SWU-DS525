@@ -75,9 +75,9 @@ def process(cur, conn, filepath):
                 cur.execute(insert_actors_statement)
 
 
-                # Insert data into repos table here
+                # Insert data into repo table here
                 insert_repos_statement = f"""
-                    INSERT INTO repos (
+                    INSERT INTO repo (
                         id,
                         name,
                         url
@@ -112,7 +112,7 @@ def process(cur, conn, filepath):
                             id,
                             type,
                             actor_id,
-                            repos_id,
+                            repo_id,
                             public,
                             created_at,
                             org_id
@@ -134,7 +134,7 @@ def process(cur, conn, filepath):
                             public,
                             created_at
                         ) VALUES ('{each["id"]}', '{each["type"]}', '{each["actor"]["id"]}',
-                        '{each["repos"]["id"]}','{each["public"]}','{each["created_at"]}')
+                        '{each["repo"]["id"]}','{each["public"]}','{each["created_at"]}')
                         ON CONFLICT (id) DO NOTHING
                     """
                 # print(insert_statement)
