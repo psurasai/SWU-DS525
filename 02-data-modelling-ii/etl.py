@@ -13,9 +13,9 @@ table_drop_actors = "DROP TABLE actors"
 table_create_events = """
     CREATE TABLE IF NOT EXISTS events
     (
-        id bigint,
+        id text,
         type VARCHAR,
-        actor_id bigint,
+        actor_id text,
         actor VARCHAR,
         public boolean,
         created_at timestamp,
@@ -28,7 +28,7 @@ table_create_events = """
 table_create_actors = """
     CREATE TABLE IF NOT EXISTS actors
     (
-        actor_id bigint,
+        actor_id text,
         actor VARCHAR,
         number_events int,
         PRIMARY KEY (
@@ -103,7 +103,7 @@ def process(session, filepath):
                         public,
                         created_at
                     ) VALUES ('{each["id"]}', '{each["type"]}', '{each["actor"]["id"]}', '{each["actor"]["login"]}',
-                    {each["public"]},'{each["created_at"]}');
+                    {each["public"]},'{each["created_at"]}')
                     """
                 session.execute(query_events)
 
@@ -162,7 +162,7 @@ def main():
 
     #insert data to events and actors tables
     process(session, filepath="../data")
-    insert_sample_data(session)
+    #insert_sample_data(session)
 
     # Select data in Cassandra and print them to stdout
     #Try to query data from event
