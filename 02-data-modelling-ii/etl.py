@@ -14,9 +14,9 @@ table_create_events = """
     CREATE TABLE IF NOT EXISTS events
     (
         id bigint,
-        type text,
+        type VARCHAR,
         actor_id bigint,
-        actor text,
+        actor VARCHAR,
         public boolean,
         created_at timestamp,
         PRIMARY KEY (
@@ -29,7 +29,7 @@ table_create_actors = """
     CREATE TABLE IF NOT EXISTS actors
     (
         actor_id bigint,
-        actor text,
+        actor VARCHAR,
         number_events int,
         PRIMARY KEY (
             actor_id
