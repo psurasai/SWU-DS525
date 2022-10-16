@@ -14,7 +14,7 @@ __________
 <br>
 
 
-### 1. change directory to project 02-data-modeling-ii:
+### 1. change directory to project 03-data-warehouse:
 ```sh
 $ cd 03-building-a-data-warehouse
 ```
