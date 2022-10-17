@@ -90,7 +90,7 @@ $ python etl.py
 <br>
 
 ### 10.	Check the data in cluster by ‘query editor’ (exported as csv):
-&nbsp;&nbsp;[staging_events] (Document/staging_events.csv) <br>
+&nbsp;&nbsp;[staging_events] (https://github.com/psurasai/SWU-DS525/blob/2369ab51fd7b8a694e934ce47a3fc65ba3f9807b/03-building-a-data-warehouse/Document/staging_events.csv) <br>
 &nbsp;&nbsp;[events] <br>
 &nbsp;&nbsp;[actors] <br>
 &nbsp;&nbsp;[repos]
