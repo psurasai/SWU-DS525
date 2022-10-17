@@ -46,7 +46,7 @@ $ pip install -r requirements.txt
 - 'Cluster permission'      : LabRole
 - 'Remaining'               : keep as default
 ```
-**!! Don't forget !! - Enable public access to AWS RedShift**
+** Enable public access to AWS RedShift **
 <br>
 
 ![Redshift](Document/redshift_1.jpeg.png)
