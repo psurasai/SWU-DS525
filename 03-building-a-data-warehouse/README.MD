@@ -90,7 +90,7 @@ $ python etl.py
 <br>
 
 ### 10.	Check the data in cluster by ‘query editor’ (exported as csv):
-&nbsp;&nbsp;[staging_events]<br>
+&nbsp;&nbsp;[staging_events] (Document/staging_events.csv) <br>
 &nbsp;&nbsp;[events] <br>
 &nbsp;&nbsp;[actors] <br>
 &nbsp;&nbsp;[repos]
