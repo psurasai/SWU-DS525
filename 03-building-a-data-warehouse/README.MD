@@ -49,7 +49,7 @@ $ pip install -r requirements.txt
 ** Enable public access to AWS RedShift **
 <br>
 
-![Redshift](Document/redshift_1.jpeg.png)
+![Redshift](Document/redshift_1.jpeg)
 <br>
 
 <br>
