@@ -90,11 +90,10 @@ $ python etl.py
 <br>
 
 ### 10.	Check the data in cluster by ‘query editor’ (exported as csv):
-&nbsp;&nbsp;[staging_events] (https://github.com/psurasai/SWU-DS525/blob/2369ab51fd7b8a694e934ce47a3fc65ba3f9807b/03-building-a-data-warehouse/Document/staging_events.csv)
-&nbsp;&nbsp;[events] (https://github.com/psurasai/SWU-DS525/blob/9c8f898cac02126040d674dd5a3c7f64dd0be9cf/03-building-a-data-warehouse/Document/events.csv)
-&nbsp;&nbsp;[actors] (https://github.com/psurasai/SWU-DS525/blob/9c8f898cac02126040d674dd5a3c7f64dd0be9cf/03-building-a-data-warehouse/Document/actors.csv)
+&nbsp;&nbsp;[staging_events] (https://github.com/psurasai/SWU-DS525/blob/2369ab51fd7b8a694e934ce47a3fc65ba3f9807b/03-building-a-data-warehouse/Document/staging_events.csv) <br>
+&nbsp;&nbsp;[events] (https://github.com/psurasai/SWU-DS525/blob/9c8f898cac02126040d674dd5a3c7f64dd0be9cf/03-building-a-data-warehouse/Document/events.csv) <br>
+&nbsp;&nbsp;[actors] (https://github.com/psurasai/SWU-DS525/blob/9c8f898cac02126040d674dd5a3c7f64dd0be9cf/03-building-a-data-warehouse/Document/actors.csv) <br>
 &nbsp;&nbsp;[repos] (https://github.com/psurasai/SWU-DS525/blob/9c8f898cac02126040d674dd5a3c7f64dd0be9cf/03-building-a-data-warehouse/Document/repos.csv)
-
 <br>
 
 ## Shutdown steps
