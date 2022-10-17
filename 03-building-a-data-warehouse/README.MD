@@ -1,7 +1,7 @@
 # Building a Data Warehouse
 
 ## Data model
-![DataModel](03-building-a-data-warehouse/Document/921D3921-40B6-43CF-9A28-98F6DA1DFB73.jpeg)
+![DataModel](Document/921D3921-40B6-43CF-9A28-98F6DA1DFB73.jpeg)
 <br>
 
 ## Documentation
