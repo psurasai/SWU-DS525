@@ -49,7 +49,7 @@ $ pip install -r requirements.txt
 **!! Don't forget !! - Enable public access to AWS RedShift**
 <br>
 
-![Redshift](Doc/Picture1.png)
+![Redshift](Document/redshift_1.jpeg.png)
 <br>
 
 <br>
@@ -60,7 +60,7 @@ $ pip install -r requirements.txt
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Manifest file : events_json_path.json <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Data file : github_events_01.json
 
-![S3](Doc/Picture2.png)
+![S3](Document/S3_bucket.jpeg)
 <br>
 
 <br>
@@ -70,7 +70,7 @@ $ pip install -r requirements.txt
 &nbsp;&nbsp;&nbsp;b. Port : 5439 <br>
 &nbsp;&nbsp;&nbsp;c. Dbname : dev <br>
 &nbsp;&nbsp;&nbsp;d. User/Password : as define when create the cluster 
-![Connection](Doc/Picture3.png)
+![Connection](Document/etl_path.jpeg)
 <br>
 
 <br>
@@ -79,7 +79,7 @@ $ pip install -r requirements.txt
 &nbsp;&nbsp;&nbsp;a. From : the URI to data file <br>
 &nbsp;&nbsp;&nbsp;b. Credentials : the ARN of LabRole <br>
 &nbsp;&nbsp;&nbsp;c. Json : the URI to manifest file <br>
-![Copy](Doc/Picture4.png)
+![Copy](Document/etl_path2.jpeg)
 <br>
 
 ### 9. Create tables, Inject data from S3 to Redshift, Insert data, Query data thru python script, named ‘etl.py’:
