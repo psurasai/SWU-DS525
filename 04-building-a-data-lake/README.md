@@ -1,7 +1,7 @@
 # Building a Data Lake
 
 ## Data model
-![er](https://github.com/psurasai/SWU-DS525/tree/main/04-building-a-data-lake/Documentation)
+![er](https://github.com/psurasai/SWU-DS525/blob/4fc423f394cdad4ae0b75d304b34a4016a3810a5/04-building-a-data-lake/Documentation/Data_model.jpeg)
 <br>
 
 ## Project implementation instruction
@@ -31,4 +31,4 @@ docker-compose up
 
 <br>
 
-ตรวจสอบรายละเอียดเพิ่มเติมได้ที่ ### Document : [Document](https://github.com/psurasai/SWU-DS525/blob/main/04-building-a-data-lake/Documentation/Week4_Datalake.pdf)
+ตรวจสอบรายละเอียดเพิ่มเติมได้ที่ : [Document](https://github.com/psurasai/SWU-DS525/blob/main/04-building-a-data-lake/Documentation/Week4_Datalake.pdf)
