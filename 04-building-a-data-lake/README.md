@@ -12,17 +12,17 @@ sudo chmod 777 .
 docker-compose up
 ```
 
-### actors : [actors]( https://github.com/psurasai/SWU-DS525/tree/main/04-building-a-data-lake/actors)
+###actors : [actors]( https://github.com/psurasai/SWU-DS525/tree/main/04-building-a-data-lake/actors)
 
 
-### repos : [repos]( https://github.com/psurasai/SWU-DS525/tree/main/04-building-a-data-lake/repos)
+###repos : [repos]( https://github.com/psurasai/SWU-DS525/tree/main/04-building-a-data-lake/repos)
 
 
-### orgs : [orgs]( https://github.com/psurasai/SWU-DS525/tree/main/04-building-a-data-lake/orgs)
+###orgs : [orgs]( https://github.com/psurasai/SWU-DS525/tree/main/04-building-a-data-lake/orgs)
 
 
-### events : [events]( https://github.com/psurasai/SWU-DS525/tree/main/04-building-a-data-lake/events)
+###events : [events]( https://github.com/psurasai/SWU-DS525/tree/main/04-building-a-data-lake/events)
 
 <br>
 
-ตรวจสอบรายละเอียดเพิ่มเติมได้ที่ ### Document : [Document](https://github.com/psurasai/SWU-DS525/blob/main/04-building-a-data-lake/Documentation/Week4_Datalake.pdf)
+ตรวจสอบรายละเอียดเพิ่มเติมได้ที่ ###Document : [Document](https://github.com/psurasai/SWU-DS525/blob/main/04-building-a-data-lake/Documentation/Week4_Datalake.pdf)
