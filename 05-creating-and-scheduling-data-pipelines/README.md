@@ -1,11 +1,11 @@
 # Creating and Scheduling Data Pipelines
 
 ## Data model
-![DataModel](Doc/data-model.png)
+![DataModel](https://github.com/psurasai/SWU-DS525/blob/894ab5da2cb5b6a588de4c2c65717055f724168e/01-data-modelling-i/01-data_modelling.jpg)
 <br>
 
 ## Documentation
-[Documentation](https://github.com/chin-lertvipada/swu-ds525/blob/bff9b3c9375882b2133aa06c9896775038fdf517/05-creating-and-scheduling-data-pipelines/Doc/Lab5%20-%20Airflow%20-%20Summary.pdf)
+[Documentation]()
 <br>
 __________
 <br>
@@ -37,8 +37,6 @@ docker-compose up
 ### 3. Prepare data:
 - คัดลอกโฟลเดอร์ `data` ที่เตรียมไว้ด้านนอกสุด เข้ามาใส่ในโฟลเดอร์ `dags` เพื่อที่ Airflow จะได้เห็นไฟล์ข้อมูลเหล่านี้ 
 <br>
-
-**หมายเหตุ:** จริง ๆ แล้วสามารถเอาโฟลเดอร์ `data` ไว้ที่ไหนก็ได้ที่ Airflow ที่เรารันเข้าถึงได้ แต่เพื่อความสะดวกสำหรับโปรเจคนี้ จึงนำเอาโฟลเดอร์ `data` ไว้ในโฟลเดอร์ `dags`
 
 <br>
 

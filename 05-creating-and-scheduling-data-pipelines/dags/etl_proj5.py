@@ -45,10 +45,10 @@ def _create_tables():
     """
     #create the repo table that consists of 3 columns and assign id as the primary key
     table_create_repo = """
-        CREATE TABLE IF NOT EXISTS repo(
+        CREATE TABLE IF NOT EXISTS repo (
             id bigint NOT NULL,
             name text,
-            url text,
+            url VARCHAR,
             PRIMARY KEY(id)
         )
     """
@@ -68,14 +68,14 @@ def _create_tables():
     #create the event table that consists of 7 columns and assign id as the primary key 
     #and actor_id, repo_id, org_id as foreign key of actor, repo and org tables, respectively
     table_create_events = """
-        CREATE TABLE IF NOT EXISTS events (
-            id bigint,
+        CREATE TABLE IF NOT EXISTS events(
+            id bigint NOT NULL,
             type text,
             actor_id bigint,
             repo_id bigint,
             public text,
             created_at text,
-            org_id bigint,
+            org_id int,
             PRIMARY KEY(id),
             CONSTRAINT fk_actor FOREIGN KEY(actor_id) REFERENCES actors(id),
             CONSTRAINT fk_repo FOREIGN KEY(repo_id) REFERENCES repo(id),
