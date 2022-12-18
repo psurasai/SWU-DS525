@@ -61,9 +61,9 @@ create_table_queries = [
 
 # cat ~/.aws/credentials
 # https://stackoverflow.com/questions/15261743/how-to-copy-csv-data-file-to-amazon-redshift
-AWS_ACCESS_KEY_ID = "ASIAZIOCTQSURF24Z7OE"
-AWS_SECRET_ACCESS_KEY = "Qvci92wpZxgONnzo9GjH9Y+dxtGGLIHU0HEjqioB"
-AWS_SESSION_TOKEN = "FwoGZXIvYXdzEBoaDEU2kS8E3CuoQAXJriLNAWrPraQLKZ1hf8i+PHVCG9Wwjlk7xtmM04AIDfX8AF+XG90m6bDkNJHuvjbC7cAoD6kZ29JCBLy+0v19Wtk2eoPFP+TwVBRKI2RCKJky9k4rSc1dzFaMUyFiY+3DBhxRTyQncXmz1Bk8/pjEf9oMdqknfLoqFhrTXphRoA/GPweT/sSof5zS2ZsCNgsrr/QSiZGwlcxdDNU1E67IC1RN/2DEI19tnJcRuLok309LS6eLGBLmR59gYSMWsyC/wVKt+5B3YW0D8GwEVxs/R8kojpj7nAYyLRZJx6R3yjYtUpc7nvhEQZnkJ38MfpRksnxYMrVMMzwaeoxsFHn7MryJ1/bTGw=="
+AWS_ACCESS_KEY_ID = "ASIAZIOCTQSU3SDYLEEZ"
+AWS_SECRET_ACCESS_KEY = "JuXIZaypcrsTSM+rvr2g1aJ0AAWQXu7hR+3sFI/i"
+AWS_SESSION_TOKEN = "FwoGZXIvYXdzECQaDKXGqb5ef1//8l/33SLNAVeNcISiaWldfg5bbLFmdoy0rvuru5wAuxVsjeXn+oEVtA1ivTZJB211PCEUSzKzQO0LiV5TXX5bbHegC15osHd2Ipqqzs0YIPTYr/s+1+7h1JNKguQyIdqvaKi0vreGCwEy9QEJhvXIJCCM1SuAAjZicfNeZffCbwmhSEyX6/QcUD7zdvaPfkoXIgWgX2SOqQ0FmR5zZK5fvCatdHV2qHgDn7gynH4NFKNLMM81ADayFj1OE3nJ1oeAx/Xne9uiQCTmeAtmHq72ESClWmwomcb9nAYyLQwfi7vsOckd/JYKwpU8htn5qhl6dRu1pgfXfrfyGwahTLiFWUpXrW2kB5nvRg=="
 
 copy_table_queries = [
     """
