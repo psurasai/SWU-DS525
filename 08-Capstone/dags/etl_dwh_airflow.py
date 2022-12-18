@@ -12,24 +12,50 @@ from airflow.operators.python import PythonOperator
 # from airflow.operators.bash_operator import BashOperator
 # from airflow.hooks.postgres_hook import PostgresHook
 
-year=2017
+year=2005
 
 create_table_queries = [
     """
     CREATE TABLE IF NOT EXISTS final_table (
-        order_id text
-        , customer_id text
-        , seller_id text
-        , product_id text
-        , order_status text
-        , month int
-        , payment_type text
-        , customer_state text
-        , seller_state text
-        , product_category_name_english text
-        , payment_value decimal
-        , price decimal
-        , freight_value decimal
+        Accident_Index text
+        , a.Longitude
+        , a.Latitude
+        , a.Police_Force
+        , a.Accident_Severity
+        , a.Number_of_Vehicles
+        , a.Number_of_Casualties
+        , year(a.Date) as year
+        , a.Date as date
+        , a.Time as time
+        , a.Day_of_Week
+        , a.1st_Road_Class
+        , a.Road_Type
+        , a.Speed_limit
+        , a.Junction_Control
+        , a.Pedestrian_Crossing-Human_Control
+        , a.Pedestrian_Crossing-Physical_Facilities
+        , a.Light_Conditions
+        , a.Weather_Conditions
+        , a.Road_Surface_Conditions
+        , a.Special_Conditions_at_Site
+        , a.Carriageway_Hazards
+        , a.Urban_or_Rural_Area
+        , a.Did_Police_Officer_Attend_Scene_of_Accident
+        , c.Vehicle_Reference
+        , c.Sex_of_Casualty
+        , c.Age_of_Casualty
+        , c.Age_Band_of_Casualty
+        , c.Casualty_Severity
+        , c.Car_Passenger
+        , c.Bus_or_Coach_Passenger
+        , v.Vehicle_Reference
+        , v.Vehicle_Type
+        , v.Towing_and_Articulation
+        , v.Junction_Location
+        , v.Engine_Capacity_(CC)
+        , v.Age_of_Vehicle
+        , v.Driver_Home_Area_Type
+
     )"""
 ]
 
@@ -42,7 +68,7 @@ AWS_SESSION_TOKEN = "FwoGZXIvYXdzEBoaDEU2kS8E3CuoQAXJriLNAWrPraQLKZ1hf8i+PHVCG9W
 copy_table_queries = [
     """
     COPY final_table
-    FROM 's3://brazilian-bucket-final/final_table/year={0}'
+    FROM 's3://uk-car-accidents/cleaned/year={0}'
     ACCESS_KEY_ID '{1}'
     SECRET_ACCESS_KEY '{2}'
     SESSION_TOKEN '{3}'
@@ -98,7 +124,7 @@ def _insert_dwh_tables():
 
 with DAG(
     'Capstone',
-    start_date = timezone.datetime(2022, 12, 1), # Start of the flow
+    start_date = timezone.datetime(2005, 1, 1), # Start of the flow
     schedule = '@monthly', # Run once a month at midnight of the first day of the month
     tags = ['capstone'],
     catchup = False, # No need to catchup the missing run since start_date
