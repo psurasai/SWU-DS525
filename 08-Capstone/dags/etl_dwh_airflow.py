@@ -61,9 +61,10 @@ create_table_queries = [
 
 # cat ~/.aws/credentials
 # https://stackoverflow.com/questions/15261743/how-to-copy-csv-data-file-to-amazon-redshift
-AWS_ACCESS_KEY_ID = "ASIAZIOCTQSU3SDYLEEZ"
-AWS_SECRET_ACCESS_KEY = "JuXIZaypcrsTSM+rvr2g1aJ0AAWQXu7hR+3sFI/i"
-AWS_SESSION_TOKEN = "FwoGZXIvYXdzECQaDKXGqb5ef1//8l/33SLNAVeNcISiaWldfg5bbLFmdoy0rvuru5wAuxVsjeXn+oEVtA1ivTZJB211PCEUSzKzQO0LiV5TXX5bbHegC15osHd2Ipqqzs0YIPTYr/s+1+7h1JNKguQyIdqvaKi0vreGCwEy9QEJhvXIJCCM1SuAAjZicfNeZffCbwmhSEyX6/QcUD7zdvaPfkoXIgWgX2SOqQ0FmR5zZK5fvCatdHV2qHgDn7gynH4NFKNLMM81ADayFj1OE3nJ1oeAx/Xne9uiQCTmeAtmHq72ESClWmwomcb9nAYyLQwfi7vsOckd/JYKwpU8htn5qhl6dRu1pgfXfrfyGwahTLiFWUpXrW2kB5nvRg=="
+AWS_ACCESS_KEY_ID = "ASIAZIOCTQSUVUI2PPNB"
+AWS_SECRET_ACCESS_KEY = "GY+U2LayKZVeL7YbGT3Nc8s4r4rEtvVwAHoaZXux"
+AWS_SESSION_TOKEN = "FwoGZXIvYXdzEDYaDHx/4AOgK2/sB7Cs9CLNAWJqjRkkxO7fuFfBe1bddmLRoyEvbjp5n8xhb/7ZSXNz4LZrOB1Pi2u3LkFP9dwzOQIbgg5K84eqpRrquz2Yb2P0nPjJbiJHbQBLP6w3P+eXp5iYmH7cWtnqI2qxB9otD9Cay/ByK7nQyeUWgR1uMf8wAo8Dg2cqq10ZI7XZvklS4he9Hk9EyIX0Rad8kuMYJpNneSyStmKno8BMhGEEMwI7WyU/haH5VpywwdO/CeAg6A540DUuYJa3uOCsHjS70rb+VhljDgUneKdXCKco9rGBnQYyLZyvUfDBA7Qgg7iFjlXYNiOwFC8RU9ZsmlBCyTH/JBS7I52afNg1tldebLXxNg=="
+
 
 copy_table_queries = [
     """
@@ -93,11 +94,11 @@ insert_dwh_queries = [
     """
 ]
 
-host = "redshift-cluster-1.ce1ofdjly7ll.us-east-1.redshift.amazonaws.com"
+host = "redshift-cluster-1.cak93pn3g0gg.us-east-1.redshift.amazonaws.com"
 port = "5439"
 dbname = "dev"
 user = "awsuser"
-password = "Ixaajph7"
+password = "awsPassword1"
 conn_str = f"host={host} dbname={dbname} user={user} password={password} port={port}"
 conn = psycopg2.connect(conn_str)
 cur = conn.cursor()
