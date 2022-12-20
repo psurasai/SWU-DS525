@@ -12,10 +12,7 @@
 <br>
 
 ## Problem & Target
-Mainly foucsing on selling report which we would like to asking the following questions:
-1. How is the total sales amount compare in term of product catagories and each state
-2. Average sales per orders in each state 
-3. Each payment type sales proportion 
+- ตรวจสอบการกระจายตัวของพื้นที่ที่เกิดอุบัติเหตุทางท้องถนนของพื้นที่ศึกษา (ข้อมูลการเกิดเหตุ 2005 - 2015 ประเทศสหราชอาณาจักร) ตามช่วงเวลาที่ผ่านมาว่ามีจุดเกิดเหตุที่ใด เปลี่ยนแปลงไปอย่างไร- แบ่งกลุ่มพื้นที่เกิดเหตุในพื้นที่ต่างๆ และ- ทำความเข้าใจรูปแบบที่เกิดขึ้นบ่อยๆ เช่น รายละเอียดคนขับ รุ่นรถ ถนน สภาพอากาศ แสงสว่าง ทางแยก ความรุนแรง ของอุบัติเหตุเหล่านี้- สะท้อน insight ที่น่าสนใจ เพื่อเสนอแนะให้ทางหน่วยงานที่เกี่ยวข้องหาทางแก้ไขปัญหา หรือออกนโยบายที่ลดการเกิดอุบัติเหตุลง
 <br>
 
 ## Data model
