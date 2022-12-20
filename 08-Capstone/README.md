@@ -80,7 +80,7 @@ $ cat ~/.aws/credentials
 
 - Update the source code with Redshift credential
 > - **dags/etl_dwh_airflow.py**
-![redshiftCredential](document/redshiftCredential.png)
+![redshiftCredential](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/dwh_dags.jpeg)
 
 <br>
 
@@ -122,25 +122,18 @@ docker-compose up
 ### 9. Execute the **"Datalake"** process thru Web service:
 - Access PySpark Notebook UI by port 8888 (localhost:8888)
 
-![pyspark](document/pyspark.png)
+![pyspark](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/S3_nb.jpeg)
 
 - Run PySpark Notebook **"/code/etl_datalake_s3.ipynb"**
 
-![runSpark](document/runSpark.png)
+![runSpark](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/final_tb.jpeg)
 
-- The cleaned data will be stored in S3 for each entity
-> - jaochin-dataset-fifa/cleaned/clubs/<br>
-> - jaochin-dataset-fifa/cleaned/leagues/<br>
-> - jaochin-dataset-fifa/cleaned/nationalities/<br>
-> - jaochin-dataset-fifa/cleaned/players/<br>
-> - jaochin-dataset-fifa/cleaned/positions/<br>
+- The cleaned data will be stored in S3 for entity
+> - uk-car-accidents/cleaned/clubs/<br>
 
-![cleanedData](document/cleanedData.png)
+- Each entity is partitioned by **"Day_of_Week"** (execution date)
 
-
-- Each entity is partitioned by **"date_oprt"** (execution date)
-
-![cleanedDataPart](document/cleanedDataPart.png)
+![cleanedDataPart](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/cleaned.jpeg)
 <br><br>
 
 ### 10. Execute the **"Datawarehouse"** process thru Airflow:
@@ -150,16 +143,13 @@ docker-compose up
 
 - The Datawarehouse script will be run follow the schedule configuration
 > - Schedule: "Monthly" (1st of each month)<br>
-> - Start date: "1st December 2022"
+> - Start date: "1st January 2005"
 
-![airflowDWH](document/airflowDWH.png)
+![airflowDWH](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/airflow.jpeg)
+![airflowDWH](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/faf.jpeg)
 
 - The Datawarehouse data will be loaded into Redshift (check by Query editor)
 ```sh
-select * from player_value_wage;
-```
-![redshiftOutput1](document/redshiftOutput1.png)
-![redshiftOutput2](document/redshiftOutput2.png)
 
 <br>
 
