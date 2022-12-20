@@ -8,7 +8,7 @@
 
 ## Data Schema
 
-![er](./Picture%20ref/HRhd2Y0.png)
+![er](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/orginal_dm.jpeg)
 <br>
 
 ## Problem & Target
@@ -20,7 +20,7 @@ Mainly foucsing on selling report which we would like to asking the following qu
 
 ## Data model
 
-![er](./Picture%20ref/Screenshot%202022-12-17%20214306.png)
+![er](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/final_dm.jpeg)
 <br>
 
 
