@@ -12,7 +12,7 @@ from airflow.operators.python import PythonOperator
 # from airflow.operators.bash_operator import BashOperator
 # from airflow.hooks.postgres_hook import PostgresHook
 
-Day_of_Week = 1
+Speed_limit = 20
 
 create_table_queries = [
     """
@@ -56,14 +56,14 @@ create_table_queries = [
 
 # cat ~/.aws/credentials
 # https://stackoverflow.com/questions/15261743/how-to-copy-csv-data-file-to-amazon-redshift
-aws_access_key_id = "ASIAZIOCTQSU3M3LTABM"
-aws_secret_access_key = "DlD0GAMvLs4Maj8hogHLqFjCQb03705YvT2rMwHv"
-aws_session_token = "FwoGZXIvYXdzEE4aDJNI6TStaRTBgtOHbiLNAWbPQNye7khgJHW5NoVGRO0nHuAHF1qOwnNDtqaeHT9G9UyVIpaSIVZ0yDKzxfYXCicaS+dIm5+s0xluwxZWiXqsrZmDQxV8uWIRV89+b6q8FfXLo0XmcUiSs0IA7bLHI3ueuTXksI9QlH848HdZY0QSGrfX/ggFIzcXNZdBzw/eTeKrVN4hhdEVIBYK0CevC/v/DTrvCGF5GMbeFSHt6tME1xG0JqKB3y5U0r78n3bqAkZJcUkqUd1nk/74x48r7ufk3hZa3SeYhy5oWhgoodyGnQYyLWcJD0gjUOXubq8xXJN9jdEGjlXw1TR/yc/+8PWMgrrqWVYFCRfgKL14jwtEew=="
+aws_access_key_id = "ASIAZIOCTQSUSFASPPJ7"
+aws_secret_access_key = "WT5Bjyvldbdzlug9YDm6HWOKyp91HeXql/qNCQfz"
+aws_session_token = "FwoGZXIvYXdzEFMaDBO+HFYuYCa4aMi+oCLNATUw4Yk19YYJXm+txzfr7/dRrdbb8WQVulRCbqMtDMX1gunJd6ipjwVZVhD9fPQBmhn05G9qAnpmrY64K8i7YqNS0d/Tg8aV0IIJRlt3huks+9FIynn4J10/L1Y8WcI+RBUHcA1XmLqRpAi2WZezu2M4I95bgYC1fGDmC+5y0MUbfxYXS1uwSwfP4leNqLKImLxKeQmsJcdDZUpw+jBxvICfNUJSMMAg7H5l9H6pEe66/TC7HYsciJjFH0kNkSpKO2+VM65ELuMbNVI4tW0o7eWHnQYyLfp9DvBhLr6laYWgzKgkXw9MjBKrCnVJ8ECdC1+wWTp60E8qLqEUfmISJVxr0A=="
 
 copy_table_queries = [
     """
     COPY final_table
-    FROM 's3://uk-car-accidents/cleaned/Day_of_Week={0}'
+    FROM 's3://uk-car-accidents/cleaned/Speed_limit={0}'
     ACCESS_KEY_ID '{1}'
     SECRET_ACCESS_KEY '{2}'
     SESSION_TOKEN '{3}'
@@ -109,7 +109,7 @@ def _truncate_datalake_tables():
 
 def _load_staging_tables():
     for query in copy_table_queries:
-        cur.execute(query.format(Day_of_Week, aws_access_key_id, aws_secret_access_key, aws_session_token))
+        cur.execute(query.format(Speed_limit, aws_access_key_id, aws_secret_access_key, aws_session_token))
         conn.commit()
 
 def _insert_dwh_tables():
