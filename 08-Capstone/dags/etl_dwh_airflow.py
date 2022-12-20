@@ -56,6 +56,43 @@ create_table_queries = [
         , v.Age_of_Vehicle
         , v.Driver_Home_Area_Type
 
+        Accident_Index text
+        , longitude decimal
+        , latitude decimal
+        , police_force text
+        , accident_severity text
+        , number_of_vehicles text
+        , number_of_casualties text
+        , year date
+        , date date
+        , time time
+        , day_of_week text
+        , 1st_road_class text
+        , road_type text
+        , speed_limit int
+        , junction_control text
+        , light_conditions text
+        , weather_conditions text
+        , road_surface_conditions text
+        , special_conditions_at_site text
+        , carriageway_harzards text
+        , urban_or_rural text
+        , police_attend_scene text
+        , vehicle_ref text
+        , sex_of_casualty int
+        , age_of_casualty int
+        , age_band_of_casualty text
+        , casualty_severity text
+        , car_passenger int
+        , bus_or_coach_passenger int
+        , vehicle_ref text
+        , vehicle_type text
+        , towing_arti text
+        , junction_location text
+        , engine_capacity_cc int
+        , age_of_vehicle int
+        , driver_home_area text
+
     )"""
 ]
 
