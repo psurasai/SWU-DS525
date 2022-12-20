@@ -26,7 +26,7 @@
 
 ### 1. Change directory to project **"chin-capstone"**:
 ```sh
-$ cd chin-capstone
+$ cd 08-Capstone
 ```
 <br>
 
@@ -35,7 +35,7 @@ $ cd chin-capstone
 ```sh
 $ cat ~/.aws/credentials
 ```
-![awsAccessKey](document/aws_access_key.png)
+![awsAccessKey](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/access.jpeg)
 
 - Copy 3 following values to update the source codes<br>
 
@@ -46,42 +46,36 @@ $ cat ~/.aws/credentials
 
 *Source code to update (1):*
 > - /code/etl_datalake_s3.ipynb
-![awsAccessKeyDL](document/aws_access_key_datalake.png)
+![awsAccessKeyDL](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/lake_access.jpeg)
 
 *Source code to update (2):*
 > - /dags/etl_dwh_airflow.py
-![awsAccessKeyDWH](document/aws_access_key_dwh.png)
+![awsAccessKeyDWH](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/dwh_access.jpeg)
 
 <br>
 
 ### 3. Prepare Datalake storage (AWS S3):
 - Create below S3 bucket with *"All public access"*
-> - **jaochin-dataset-fifa**
-
-![s3Bucket](document/s3_bucket.png)
+> - **uk-car-accidents**
 
 - Create below repositories in the bucket
-> - **landing** (store raw data)<br>
 > - **cleaned** (store datalake or cleaned data)
 
-![s3Folder](document/s3_folder.png)
+- Place the raw data in **uk-car-accidents**
 
-- Place the raw data in **"landing/"**
-
-![rawData](document/rawData.png)
+![rawData](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/raw_S3.jpeg)
 
 <br>
 
 ### 4. Prepare Datawarehouse storage (AWS RedShift):
 - Create Redshift cluster with following information
 
-![redshift1](document/redshift1.png)
-![redshift2](document/redshift2.png)
-![redshift3](document/redshift3.png)
+![redshift1](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/cluster1.jpeg)
+![redshift2](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/cluster2.jpeg)
 
 - Copy "**Endpoint**" and Cluster information to update Redshift credential
 
-![redshiftEndpoint](document/redshiftEndpoint.png)
+![redshiftEndpoint](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/endpoint.jpeg)
 
 
 - Update the source code with Redshift credential
