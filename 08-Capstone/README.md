@@ -131,7 +131,7 @@ docker-compose up
 - The cleaned data will be stored in S3 for entity
 > - uk-car-accidents/cleaned/clubs/<br>
 
-- Each entity is partitioned by **"Day_of_Week"** (execution date)
+- Each entity is partitioned by **"Day_of_Week"**
 
 ![cleanedDataPart](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/cleaned.jpeg)
 <br><br>
@@ -156,12 +156,11 @@ docker-compose up
 ### 11. Dashboard creation thru Tableau:
 - Connect Tableau Desktop to Redshift by following information
 
-![redshiftCredential](document/redshiftCredential.png)
-![tbConnect](document/tbConnect.png)
+![tbConnect](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/tableau.jpeg)
 
 - Load the data from Redshift to Tableau
 
-![tbLoadData](document/tbLoadData.png)
+![tbLoadData](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/tableau_2.jpeg)
 
 - Create Dashboard to visualize the insight!
 
