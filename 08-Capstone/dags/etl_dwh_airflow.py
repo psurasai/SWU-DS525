@@ -12,50 +12,11 @@ from airflow.operators.python import PythonOperator
 # from airflow.operators.bash_operator import BashOperator
 # from airflow.hooks.postgres_hook import PostgresHook
 
-year=2005
+Day_of_Week = 1
 
 create_table_queries = [
     """
     CREATE TABLE IF NOT EXISTS final_table (
-        Accident_Index text
-        , a.Longitude
-        , a.Latitude
-        , a.Police_Force
-        , a.Accident_Severity
-        , a.Number_of_Vehicles
-        , a.Number_of_Casualties
-        , year(a.Date) as year
-        , a.Date as date
-        , a.Time as time
-        , a.Day_of_Week
-        , a.1st_Road_Class
-        , a.Road_Type
-        , a.Speed_limit
-        , a.Junction_Control
-        , a.Pedestrian_Crossing-Human_Control
-        , a.Pedestrian_Crossing-Physical_Facilities
-        , a.Light_Conditions
-        , a.Weather_Conditions
-        , a.Road_Surface_Conditions
-        , a.Special_Conditions_at_Site
-        , a.Carriageway_Hazards
-        , a.Urban_or_Rural_Area
-        , a.Did_Police_Officer_Attend_Scene_of_Accident
-        , c.Vehicle_Reference
-        , c.Sex_of_Casualty
-        , c.Age_of_Casualty
-        , c.Age_Band_of_Casualty
-        , c.Casualty_Severity
-        , c.Car_Passenger
-        , c.Bus_or_Coach_Passenger
-        , v.Vehicle_Reference
-        , v.Vehicle_Type
-        , v.Towing_and_Articulation
-        , v.Junction_Location
-        , v.Engine_Capacity_(CC)
-        , v.Age_of_Vehicle
-        , v.Driver_Home_Area_Type
-
         Accident_Index text
         , longitude decimal
         , latitude decimal
@@ -63,11 +24,10 @@ create_table_queries = [
         , accident_severity text
         , number_of_vehicles text
         , number_of_casualties text
-        , year date
         , date date
         , time time
         , day_of_week text
-        , 1st_road_class text
+        , first_road_class int
         , road_type text
         , speed_limit int
         , junction_control text
@@ -78,7 +38,6 @@ create_table_queries = [
         , carriageway_harzards text
         , urban_or_rural text
         , police_attend_scene text
-        , vehicle_ref text
         , sex_of_casualty int
         , age_of_casualty int
         , age_band_of_casualty text
@@ -89,7 +48,6 @@ create_table_queries = [
         , vehicle_type text
         , towing_arti text
         , junction_location text
-        , engine_capacity_cc int
         , age_of_vehicle int
         , driver_home_area text
 
@@ -98,15 +56,14 @@ create_table_queries = [
 
 # cat ~/.aws/credentials
 # https://stackoverflow.com/questions/15261743/how-to-copy-csv-data-file-to-amazon-redshift
-AWS_ACCESS_KEY_ID = "ASIAZIOCTQSUVUI2PPNB"
-AWS_SECRET_ACCESS_KEY = "GY+U2LayKZVeL7YbGT3Nc8s4r4rEtvVwAHoaZXux"
-AWS_SESSION_TOKEN = "FwoGZXIvYXdzEDYaDHx/4AOgK2/sB7Cs9CLNAWJqjRkkxO7fuFfBe1bddmLRoyEvbjp5n8xhb/7ZSXNz4LZrOB1Pi2u3LkFP9dwzOQIbgg5K84eqpRrquz2Yb2P0nPjJbiJHbQBLP6w3P+eXp5iYmH7cWtnqI2qxB9otD9Cay/ByK7nQyeUWgR1uMf8wAo8Dg2cqq10ZI7XZvklS4he9Hk9EyIX0Rad8kuMYJpNneSyStmKno8BMhGEEMwI7WyU/haH5VpywwdO/CeAg6A540DUuYJa3uOCsHjS70rb+VhljDgUneKdXCKco9rGBnQYyLZyvUfDBA7Qgg7iFjlXYNiOwFC8RU9ZsmlBCyTH/JBS7I52afNg1tldebLXxNg=="
-
+aws_access_key_id = "ASIAZIOCTQSU3M3LTABM"
+aws_secret_access_key = "DlD0GAMvLs4Maj8hogHLqFjCQb03705YvT2rMwHv"
+aws_session_token = "FwoGZXIvYXdzEE4aDJNI6TStaRTBgtOHbiLNAWbPQNye7khgJHW5NoVGRO0nHuAHF1qOwnNDtqaeHT9G9UyVIpaSIVZ0yDKzxfYXCicaS+dIm5+s0xluwxZWiXqsrZmDQxV8uWIRV89+b6q8FfXLo0XmcUiSs0IA7bLHI3ueuTXksI9QlH848HdZY0QSGrfX/ggFIzcXNZdBzw/eTeKrVN4hhdEVIBYK0CevC/v/DTrvCGF5GMbeFSHt6tME1xG0JqKB3y5U0r78n3bqAkZJcUkqUd1nk/74x48r7ufk3hZa3SeYhy5oWhgoodyGnQYyLWcJD0gjUOXubq8xXJN9jdEGjlXw1TR/yc/+8PWMgrrqWVYFCRfgKL14jwtEew=="
 
 copy_table_queries = [
     """
     COPY final_table
-    FROM 's3://uk-car-accidents/cleaned/year={0}'
+    FROM 's3://uk-car-accidents/cleaned/Day_of_Week={0}'
     ACCESS_KEY_ID '{1}'
     SECRET_ACCESS_KEY '{2}'
     SESSION_TOKEN '{3}'
@@ -152,7 +109,7 @@ def _truncate_datalake_tables():
 
 def _load_staging_tables():
     for query in copy_table_queries:
-        cur.execute(query.format(year, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_SESSION_TOKEN))
+        cur.execute(query.format(Day_of_Week, aws_access_key_id, aws_secret_access_key, aws_session_token))
         conn.commit()
 
 def _insert_dwh_tables():
