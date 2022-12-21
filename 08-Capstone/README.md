@@ -147,10 +147,6 @@ docker-compose up
 
 ![airflowDWH](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/airflow.jpeg)
 ![airflowDWH](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/faf.jpeg)
-
-- The Datawarehouse data will be loaded into Redshift (check by Query editor)
-```sh
-
 <br>
 
 ### 11. Dashboard creation thru Tableau:
