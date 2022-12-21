@@ -164,8 +164,8 @@ docker-compose up
 
 - Create Dashboard to visualize the insight!
 
-https://public.tableau.com/app/profile/chin.lertvipada/viz/Capstone_csv/FootballMarketValue
-![dashboard](document/dashboard.png)
+https://public.tableau.com/app/profile/peerawit.surasai/viz/Car_accidents_Capstone/UKAccidentDashboard?publish=yes
+![dashboard](https://github.com/psurasai/SWU-DS525/blob/main/08-Capstone/gallary/visual.jpeg)
 <br>
 __________
 <br>
